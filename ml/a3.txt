@@ -1,0 +1,66 @@
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler,LabelEncoder
+from sklearn.metrics import accuracy_score, confusion_matrix
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense
+
+!pip install tensorflow
+
+# 1. Read the dataset
+df = pd.read_csv("3-Churn_Modelling.csv")
+print(df.head())
+# Remove unnecessary columns
+df = df.drop(columns=["RowNumber", "CustomerId", "Surname"])
+
+# Convert the categorical variables to numerical values
+label_encoder = LabelEncoder()
+
+# Apply Label Encoding on 'Gender' and 'Geography'
+df['Gender'] = label_encoder.fit_transform(df['Gender'])  # Female=0, Male=1
+df['Geography'] = label_encoder.fit_transform(df['Geography'])  # France=0, Germany=1, Spain=2
+
+
+
+
+# 2. Separate features and target, then split the data
+X = df.drop("Exited", axis=1)
+y = df["Exited"]
+
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.2, random_state=42
+)
+
+
+# 3. Normalize the data
+scaler = StandardScaler()
+X_train = scaler.fit_transform(X_train)
+X_test = scaler.transform(X_test)
+
+
+
+# 4. Build the neural network model
+model = Sequential()
+model.add(Dense(16, activation="relu", input_shape=(X_train.shape[1],)))
+model.add(Dense(8, activation="relu"))
+model.add(Dense(1, activation="sigmoid"))
+
+
+
+model.compile(
+    optimizer="adam",
+    loss="binary_crossentropy",
+    metrics=["accuracy"]
+)
+model.fit(X_train, y_train, epochs=50)
+
+
+# Prediction
+y_pred = model.predict(X_test)
+y_pred = (y_pred > 0.5) # to convert the probabilistic values to True or False
+y_pred
+# Print accuracy score and confusion matrix
+print("Accuracy Score:", accuracy_score(y_test, y_pred))
+print("Confusion Matrix:")
+print(confusion_matrix(y_test, y_pred))
+
