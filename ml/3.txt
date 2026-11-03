@@ -1,0 +1,236 @@
+Q1. What is the aim of this assignment?
+
+To predict whether a bank customer will leave the bank or continue using its services.
+
+Q2. Which type of machine learning is used?
+
+Supervised Learning.
+
+Q3. Is this classification or regression?
+
+Binary Classification because there are only two outputs.
+- 0 = Customer stays.
+- 1 = Customer leaves.
+Q4. Which algorithm did you use?
+
+Artificial Neural Network (ANN).
+
+Q5. What is customer churn?
+
+Customer churn means a customer stops using the company's services.
+
+Q6. What is the target variable?
+
+Exited.
+2. Data Preprocessing
+Q7. Why did you remove RowNumber, CustomerId and Surname?
+
+Because these columns are identifiers or names and are not useful for predicting customer churn.
+
+Q8. What is Label Encoding?
+
+It converts categorical values into numerical values.
+
+Q9. Why did you use LabelEncoder?
+
+To convert Gender and Geography into numerical values so the model can process them.
+
+Q10. What is the encoding used in your assignment?
+- Gender: Female = 0, Male = 1
+- Geography: France = 0, Germany = 1, Spain = 2
+Q11. What are features?
+
+Input columns used to predict the output.
+
+Q12. What is the target variable?
+
+The output we want to predict. Here, it is Exited.
+
+Q13. Why did you use train_test_split()?
+
+To divide data into training and testing sets.
+
+Q14. What is your train-test ratio?
+
+80% training and 20% testing.
+3. StandardScaler
+Q15. What is StandardScaler?
+
+It is used to bring numerical features to a similar scale.
+
+Q16. Why do we use StandardScaler?
+
+Because features have different ranges. Scaling helps the neural network train more effectively.
+
+Q17. What is the formula of StandardScaler?
+\[
+Z=\frac{X-\text{Mean}}{\text{Standard Deviation}}
+\]
+
+Q18. Why do we use fit_transform() on training data?
+
+It calculates the mean and standard deviation from training data and scales it.
+
+Q19. Why do we use only transform() on testing data?
+
+To apply the same training-data scaling values to testing data and avoid data leakage.
+4. Artificial Neural Network (ANN)
+Q20. What is ANN?
+
+ANN is a machine learning model inspired by the human brain. It contains interconnected neurons that learn patterns from data.
+
+Q21. What are the main layers in ANN?
+1. Input layer
+2. Hidden layer
+3. Output layer
+Q22. How many layers did you use in your model?
+
+Three Dense layers:
+- First layer: 16 neurons.
+- Second layer: 8 neurons.
+- Output layer: 1 neuron.
+Q23. What is a neuron?
+
+A neuron is a basic processing unit of a neural network.
+
+Q24. What is a Dense layer?
+
+A Dense layer is a fully connected layer where each neuron connects to all neurons in the previous layer.
+
+Q25. What is an activation function?
+
+It helps the neural network learn complex patterns by introducing non-linearity.
+
+Q26. Which activation functions did you use?
+- ReLU in the first hidden layer.
+- ReLU in the second hidden layer.
+- Sigmoid in the output layer.
+Q27. What is ReLU?
+
+ReLU stands for Rectified Linear Unit. It returns zero for negative inputs and the same value for positive inputs.
+
+Q28. What is Sigmoid?
+
+Sigmoid converts a value into a range between 0 and 1. It is useful for binary classification.
+5. Model Compilation and Training
+Q29. What is Sequential()?
+
+It creates a neural network where layers are added one after another.
+
+Q30. What is model.compile()?
+
+It configures the model with an optimizer, loss function and evaluation metrics.
+
+Q31. Which optimizer did you use?
+
+Adam optimizer.
+
+Q32. What is an optimizer?
+
+An optimizer updates the model's weights to reduce prediction errors.
+
+Q33. What is a loss function?
+
+It measures the difference between actual values and predicted values.
+
+Q34. Which loss function did you use?
+
+Binary Crossentropy.
+
+Q35. Why did you use Binary Crossentropy?
+
+Because our problem has only two classes: 0 and 1.
+
+Q36. What is an epoch?
+
+One complete pass through the entire training dataset.
+
+Q37. How many epochs did you use?
+
+50 epochs.
+
+Q38. What is batch size?
+
+It is the number of training samples processed before updating model weights.
+
+Your code does not specify batch size, so Keras uses its default value of 32.
+6. Prediction and Evaluation
+Q39. What does model.predict() do?
+
+It predicts the output for testing data.
+
+Q40. Why did you use 0.5 as a threshold?
+
+To convert predicted probabilities into binary classes.
+- Greater than 0.5 = True (1).
+- 0.5 or less = False (0).
+Q41. What is accuracy?
+
+Accuracy is the percentage of correctly predicted results.
+
+Q42. What is a confusion matrix?
+
+It shows correct and incorrect predictions made by the model.
+
+Q43. What is the accuracy of your model?
+86.2%
+Q44. What is overfitting?
+
+When a model performs well on training data but poorly on unseen testing data.
+
+Q45. What is underfitting?
+
+When a model fails to learn patterns properly, even from training data.
+7. Important Questions About Your Output
+Your confusion matrix is:
+[[1547   60]
+ [ 216  177]]
+
+
+Q46. What is True Positive (TP)?
+
+The model correctly predicts that a customer will leave.
+
+Q47. What is True Negative (TN)?
+
+The model correctly predicts that a customer will stay.
+
+Q48. What is False Positive (FP)?
+
+The model predicts that a customer will leave, but actually the customer stays.
+
+Q49. What is False Negative (FN)?
+
+The model predicts that a customer will stay, but actually the customer leaves.
+
+Q50. What is the purpose of customer churn prediction?
+
+It helps banks identify customers who may leave so they can take steps to retain them.
+
+Most Important 15 Questions to Prepare First
+1. What is customer churn?
+2. What is ANN?
+3. What is binary classification?
+4. What is Label Encoding?
+5. Why did you remove unnecessary columns?
+6. What is StandardScaler?
+7. Why do we use fit_transform() and transform()?
+8. What are the layers of ANN?
+9. What is ReLU?
+10. What is Sigmoid?
+11. What is Adam optimizer?
+12. What is Binary Crossentropy?
+13. What is an epoch?
+14. What is a confusion matrix?
+15. Explain your model accuracy and confusion matrix.
+Remember your assignment details:
+Item	Your implementation
+Algorithm	ANN
+Training/testing	80% / 20%
+Hidden layers	16 and 8 neurons
+Output neurons	1
+Activations	ReLU, ReLU, Sigmoid
+Optimizer	Adam
+Loss	Binary Crossentropy
+Epochs	50
+Accuracy	86.2%

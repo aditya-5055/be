@@ -1,0 +1,183 @@
+Q1. What is the aim of this assignment?
+
+To predict the Uber taxi fare using machine learning.
+
+Q2. Which type of machine learning is used?
+
+Supervised Learning, because we train the model using data with known fare values.
+
+Q3. Is this classification or regression?
+
+Regression, because we predict a continuous numerical value (fare amount).
+
+Q4. Which dataset did you use?
+
+Uber fare dataset (1-uber.csv).
+
+Q5. What is the target variable?
+
+fare_amount, because we want to predict the fare.
+
+Q6. Which two algorithms did you use?
+- Linear Regression
+- Random Forest Regression
+2. Data Preprocessing
+Q7. Why do we use df.dropna()?
+
+To remove rows containing missing values.
+
+Q8. Why did you remove Unnamed: 0 and key?
+
+Because these columns are not useful for predicting the fare.
+
+Q9. Why did you convert pickup_datetime into an hour?
+
+Because the pickup hour may affect the fare. For example, fares may differ during busy hours.
+
+Q10. Why did you remove pickup_datetime after extracting the hour?
+
+Because we only need the hour feature from that column in our model.
+
+Q11. What is feature engineering?
+
+Creating new useful features from existing data.
+
+Q12. Why did you calculate distance?
+
+Because the distance between pickup and drop-off locations can affect the taxi fare.
+
+Q13. Which formula did you use to calculate distance?
+
+Euclidean distance formula:
+\[
+d=\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}
+\]
+
+Q14. What is an outlier?
+
+An outlier is a value that is very different from most other values.
+
+Q15. Why did you remove outliers?
+
+To remove unusual values that may negatively affect model performance.
+
+Q16. What is a boxplot?
+
+A boxplot is a graph used to understand data distribution and identify outliers.
+
+Q17. What is the IQR method?
+
+IQR stands for Interquartile Range.
+\[
+IQR=Q3-Q1
+\]
+
+It is used to identify outliers.
+
+Q18. What are Q1 and Q3?
+- Q1: 25th percentile.
+- Q3: 75th percentile.
+Q19. What is correlation?
+
+Correlation measures the relationship between two numerical variables.
+
+Q20. What is a heatmap?
+
+A heatmap is a graphical representation of values using different colours. Here, it shows correlations between features.
+3. Machine Learning Algorithms
+Q21. What is Linear Regression?
+
+Linear Regression is an algorithm that predicts a continuous value by finding a linear relationship between input features and the target.
+
+Q22. What is Random Forest Regression?
+
+It is an algorithm that combines multiple decision trees and uses their average prediction for regression.
+
+Q23. Difference between Linear Regression and Random Forest?
+Linear Regression	Random Forest
+Uses a linear relationship	Uses multiple decision trees
+Simple model	Ensemble model
+Easy to interpret	More complex
+May miss complex patterns	Can learn complex patterns
+
+Q24. What is a Decision Tree?
+
+A Decision Tree makes predictions by splitting data based on conditions.
+
+Q25. What is an ensemble learning method?
+
+It combines multiple models to produce a better prediction.
+
+Q26. What is n_estimators=100?
+
+It means the Random Forest uses 100 decision trees.
+4. Model Training and Evaluation
+Q27. Why do we split data into training and testing sets?
+
+To train the model on one part and evaluate it on unseen data.
+
+Q28. What is the train-test split ratio in your code?
+
+80% training data and 20% testing data.
+
+Q29. What is random_state=42?
+
+It ensures reproducible results by keeping the same random split.
+
+Q30. What is fit()?
+
+It trains the machine learning model using training data.
+
+Q31. What is predict()?
+
+It predicts the output using the trained model.
+
+Q32. What is R² Score?
+
+R² measures how well the model explains the variation in the target values. Higher is generally better.
+
+Q33. What is RMSE?
+
+RMSE stands for Root Mean Squared Error. It measures the average size of prediction errors, with larger errors penalized more.
+
+Q34. Which is better: higher R² or lower R²?
+
+Higher R² is generally better.
+
+Q35. Which is better: higher RMSE or lower RMSE?
+
+Lower RMSE is better.
+
+Q36. Why did you compare two models?
+
+To identify which model gives better fare predictions.
+5. Important Code-Based Questions
+Q37. What does df.shape return?
+
+It returns the number of rows and columns.
+
+Q38. What does df.describe() do?
+
+It provides statistical information such as mean, minimum, maximum and standard deviation.
+
+Q39. What does df.corr() do?
+
+It calculates the correlation between numerical columns.
+
+Q40. What does axis=1 mean in drop()?
+
+It means we are removing a column. axis=0 means removing a row.
+
+Q41. What does n_jobs=-1 mean?
+
+It uses all available CPU cores to run the Random Forest computation in parallel.
+
+Q42. Why do we use NumPy?
+
+For numerical calculations, such as calculating distance and square roots.
+
+Q43. Why do we use Pandas?
+
+To load, process and analyze the dataset.
+
+Most important questions to revise first]

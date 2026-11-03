@@ -1,0 +1,202 @@
+Q1. What is the aim of this assignment?
+
+To group sales data into different clusters using clustering algorithms.
+
+Q2. Which type of machine learning is used?
+
+Unsupervised Learning.
+
+Q3. Why is it called Unsupervised Learning?
+
+Because the dataset does not have predefined output labels.
+
+Q4. What is clustering?
+
+Clustering means grouping similar data points together.
+
+Q5. Which algorithms did you use?
+1. K-Means Clustering
+2. Hierarchical Clustering
+Q6. Which dataset did you use?
+
+Sales Data Sample (5-sales_data_sample.csv).
+2. Data Preprocessing
+Q7. Which features did you select?
+- SALES
+- QUANTITYORDERED
+- PRICEEACH
+- MSRP
+Q8. Why did you use dropna()?
+
+To remove rows containing missing values in the selected features.
+
+Q9. What is feature scaling?
+
+Feature scaling brings numerical features to a similar scale.
+
+Q10. Why did you use StandardScaler?
+
+Because features have different ranges. Scaling prevents large-value features from dominating distance calculations.
+
+Q11. What is the formula of StandardScaler?
+\[
+Z=\frac{X-\text{Mean}}{\text{Standard Deviation}}
+\]
+
+3. K-Means Clustering
+Q12. What is K-Means Clustering?
+
+It is an unsupervised learning algorithm that groups data points into K clusters based on similarity.
+
+Q13. What does K represent?
+
+K represents the number of clusters.
+
+Q14. What is a centroid?
+
+A centroid is the center point of a cluster.
+
+Q15. How does K-Means work?
+1. Select K clusters.
+2. Initialize cluster centroids.
+3. Assign each data point to its nearest centroid.
+4. Calculate new centroids.
+5. Repeat until the clusters become stable.
+Q16. What is the Elbow Method?
+
+It is a method used to find the suitable number of clusters.
+
+Q17. What is WCSS?
+
+WCSS stands for Within-Cluster Sum of Squares. It measures the sum of squared distances between data points and their cluster centroids.
+
+Q18. Why did you use the Elbow Method?
+
+To identify the suitable number of clusters.
+
+Q19. What is the optimal K in your assignment?
+
+K = 3.
+
+Q20. What does n_init=10 mean?
+
+K-Means runs with 10 different centroid initializations and selects the best result.
+
+Q21. What does random_state=42 do?
+
+It helps produce reproducible results.
+4. Hierarchical Clustering
+Q22. What is Hierarchical Clustering?
+
+It is an unsupervised learning algorithm that creates a hierarchy of clusters.
+
+Q23. What are the types of Hierarchical Clustering?
+- Agglomerative (bottom-up)
+- Divisive (top-down)
+Q24. Which type did you use?
+
+Agglomerative Clustering.
+
+Q25. What is Agglomerative Clustering?
+
+It starts with each data point as a separate cluster and repeatedly merges the closest clusters.
+
+Q26. What is linkage?
+
+Linkage is a method used to calculate the distance between clusters.
+
+Q27. Which linkage did you use?
+
+Ward linkage.
+
+Q28. What is Ward linkage?
+
+It merges clusters in a way that minimizes the increase in within-cluster variance.
+
+Q29. What is a dendrogram?
+
+A dendrogram is a tree-like diagram that shows how clusters are merged.
+5. PCA and Visualization
+Q30. What is PCA?
+
+PCA stands for Principal Component Analysis. It reduces the number of dimensions in data while preserving as much variation as possible.
+
+Q31. Why did you use PCA?
+
+To reduce the four selected features into two dimensions for visualization.
+
+Q32. Does PCA perform clustering?
+
+No. PCA only reduces dimensions. K-Means and Hierarchical Clustering perform the clustering.
+
+Q33. What does n_components=2 mean?
+
+It means we reduce the data to two principal components.
+
+Q34. Why did you use a scatter plot?
+
+To visualize the clusters in two dimensions.
+6. Important Difference Questions
+Q35. Difference between K-Means and Hierarchical Clustering?
+K-Means	Hierarchical
+Uses centroids	Uses cluster merging
+Requires K beforehand	Can build a hierarchy
+Generally faster	Can be slower
+Does not produce a dendrogram	Can produce a dendrogram
+
+Q36. Difference between Supervised and Unsupervised Learning?
+- Supervised Learning uses labelled data.
+- Unsupervised Learning uses unlabelled data.
+Q37. What are the applications of clustering?
+- Customer segmentation
+- Market analysis
+- Sales analysis
+- Product grouping
+- Recommendation systems
+7. Questions Based on Your Code
+Q38. What does fit_transform() do in StandardScaler?
+
+It calculates the scaling values and transforms the data.
+
+Q39. What does fit_predict() do?
+
+It trains the clustering algorithm and returns cluster labels for the data points.
+
+Q40. What does inertia_ return?
+
+It returns WCSS for the fitted K-Means model.
+
+Q41. What does df.groupby() do?
+
+It groups rows based on a column so we can calculate statistics for each group.
+
+Q42. Why did you calculate the mean of each cluster?
+
+To understand the average sales, quantity, price and MSRP values of each cluster.
+
+Most Important 12 Questions
+If you have less time, prepare these first:
+1. What is clustering?
+2. What is Unsupervised Learning?
+3. What is K-Means?
+4. What is a centroid?
+5. What is the Elbow Method?
+6. What is WCSS?
+7. Why did you choose K = 3?
+8. What is Hierarchical Clustering?
+9. What is Ward linkage?
+10. What is PCA?
+11. Difference between K-Means and Hierarchical Clustering?
+12. Why did you use StandardScaler?
+Remember your assignment details
+Parameter	Your implementation
+Dataset	Sales Data Sample
+Features	4
+Scaling	StandardScaler
+Clustering algorithms	K-Means and Agglomerative
+Optimal K	3
+K-Means initializations	10
+Linkage	Ward
+PCA components	2
+
+Important: Your dendrogram code is commented out, so it is not executed in your notebook. If asked, say you used Agglomerative Clustering with Ward linkage, but the dendrogram was not generated in the executed code.

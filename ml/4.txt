@@ -1,0 +1,168 @@
+Q1. What is the aim of this assignment?
+
+To find the minimum value of a function using the Gradient Descent algorithm.
+
+Q2. What is Gradient Descent?
+
+Gradient Descent is an optimization algorithm used to find the minimum value of a function.
+
+Q3. What is optimization?
+
+Optimization means finding the best possible value, such as minimum cost or minimum error.
+
+Q4. Which function did you use?
+\[
+f(x)=(x+3)^2
+\]
+
+Q5. What is the minimum value of this function?
+
+The minimum occurs at \(x=-3\), and the minimum function value is 0.
+
+Q6. What is a derivative?
+
+A derivative tells us how quickly a function changes.
+
+Q7. What is the derivative of your function?
+\[
+f'(x)=2(x+3)
+\]
+
+2. Gradient Descent Algorithm
+Q8. What is the Gradient Descent formula?
+\[
+x_{\text{new}}=x_{\text{old}}-\alpha f'(x)
+\]
+
+Here, \(\alpha\) is the learning rate.
+
+Q9. What is a learning rate?
+
+Learning rate controls how big a step the algorithm takes during each update.
+
+Q10. What happens if the learning rate is too high?
+
+The algorithm may overshoot the minimum or fail to converge.
+
+Q11. What happens if the learning rate is too low?
+
+The algorithm takes very small steps and becomes slow.
+
+Q12. What is convergence?
+
+Convergence means the algorithm gets closer to a stable solution.
+
+Q13. What is an iteration?
+
+One complete update of the value of x is called an iteration.
+
+Q14. What is a local minimum?
+
+A local minimum is the lowest point in a nearby region of a function.
+
+Q15. What is a global minimum?
+
+A global minimum is the lowest value of the function over its entire domain.
+3. Questions Based on Your Code
+Q16. What is the starting value of x?
+
+Q17. What is your learning rate?
+
+0.1.
+
+Q18. How many iterations did you perform?
+
+Q19. What does func(x) do?
+
+It calculates the function value \((x+3)^2\).
+
+Q20. What does derivative(x) do?
+
+It calculates the derivative \(2(x+3)\).
+
+Q21. Why did you create an empty list gd = []?
+
+To store the values of x during Gradient Descent.
+
+Q22. What does grad = derivative(x) do?
+
+It calculates the gradient at the current value of x.
+
+Q23. Explain this line:
+x = x - learning_rate * grad
+
+
+
+It updates x by moving in the opposite direction of the gradient.
+
+Q24. Why do we use range(num_iterations)?
+
+To repeat the Gradient Descent update 50 times.
+
+Q25. What does gd.append(x) do?
+
+It stores the current x value in the list.
+
+Q26. Why did you use return x?
+
+To return the final value of x after all iterations.
+
+Q27. Why did you calculate y_values?
+
+To calculate the function value for every stored x value so we can plot the results.
+4. Plotting Questions
+Q28. Why did you use Seaborn?
+
+To create a graph showing the Gradient Descent process.
+
+Q29. Why did you use Matplotlib?
+
+To add labels, title and display the graph.
+
+Q30. What does the graph show?
+
+It shows how the function values change as Gradient Descent moves towards the minimum.
+5. Applications and Differences
+Q31. Where is Gradient Descent used?
+- Linear Regression
+- Logistic Regression
+- Artificial Neural Networks
+- Deep Learning
+Q32. What are the types of Gradient Descent?
+1. Batch Gradient Descent
+2. Stochastic Gradient Descent
+3. Mini-batch Gradient Descent
+Q33. Difference between Batch and Stochastic Gradient Descent?
+- Batch Gradient Descent uses the complete training dataset for each update.
+- Stochastic Gradient Descent uses one training example for each update.
+Q34. What is the difference between Gradient Descent and Genetic Algorithm?
+
+Gradient Descent uses gradients to find a minimum, while Genetic Algorithm uses ideas inspired by natural selection.
+
+Q35. Does Gradient Descent always find the global minimum?
+
+No. Depending on the function and starting point, it may converge to a local minimum or another stationary point.
+
+Most Important 12 Questions
+If you have less time, prepare these first:
+1. What is Gradient Descent?
+2. What is optimization?
+3. What is the derivative?
+4. What is the learning rate?
+5. Explain the Gradient Descent formula.
+6. What happens if the learning rate is too high?
+7. What happens if the learning rate is too low?
+8. What is convergence?
+9. What is the difference between local and global minimum?
+10. What is the purpose of gd.append(x)?
+11. What is the minimum of your function?
+12. Where is Gradient Descent used?
+Remember your assignment values
+Parameter	Value
+Function	\((x+3)^2\)
+Derivative	\(2(x+3)\)
+Starting x	2
+Learning rate	0.1
+Iterations	50
+Minimum x	-3
+Minimum function value	0

@@ -1,0 +1,197 @@
+Q1. What is the aim of this assignment?
+
+To classify emails as Spam or Not Spam using machine learning.
+
+Q2. Which type of machine learning is used?
+
+Supervised Learning.
+
+Q3. Is this classification or regression?
+
+Classification, because we predict categories (0 or 1).
+
+Q4. What is the target variable?
+
+Prediction.
+- 0 = Not Spam
+- 1 = Spam
+Q5. Which algorithms did you use?
+- K-Nearest Neighbors (KNN)
+- Support Vector Machine (SVM)
+Q6. What is the shape of your dataset?
+
+5172 rows and 3002 columns before preprocessing.
+2. Data Preprocessing
+Q7. Why did you use dropna()?
+
+To remove rows containing missing values.
+
+Q8. Did your dataset contain missing values?
+
+No, it contained zero missing values.
+
+Q9. Why did you remove Email No.?
+
+Because it is just an email identifier and is not useful for prediction.
+
+Q10. What are features?
+
+Features are input variables used to make predictions.
+
+Q11. What is the target variable?
+
+The output we want to predict. Here, it is Prediction.
+
+Q12. What does value_counts() do?
+
+It counts how many times each value occurs in a column.
+
+Q13. How many spam and non-spam emails are present?
+- Not Spam: 3672
+- Spam: 1500
+Q14. Why did you use a countplot?
+
+To visually compare the number of spam and non-spam emails.
+3. KNN Algorithm
+Q15. What is KNN?
+
+KNN stands for K-Nearest Neighbors. It classifies a new data point based on the majority class of its nearest neighbors.
+
+Q16. What is K in KNN?
+
+K represents the number of nearest neighbors considered.
+
+Q17. What value of K did you use?
+
+K = 5.
+
+Q18. How does KNN work?
+1. Calculate distances from the new data point.
+2. Find the nearest K neighbors.
+3. Check their classes.
+4. Assign the majority class.
+Q19. What is the default distance commonly used in KNN?
+
+Euclidean distance.
+
+Q20. What happens if K is too small?
+
+The model may become sensitive to noise.
+
+Q21. What happens if K is too large?
+
+The model may become too generalized and give incorrect classifications.
+4. SVM Algorithm
+Q22. What is SVM?
+
+SVM stands for Support Vector Machine. It finds a decision boundary that separates different classes.
+
+Q23. What is a hyperplane?
+
+A hyperplane is a decision boundary used to separate classes.
+
+Q24. What are support vectors?
+
+They are the data points closest to the decision boundary.
+
+Q25. What is margin in SVM?
+
+Margin is the distance between the decision boundary and the nearest data points from both classes.
+
+Q26. Which kernel did you use?
+
+Linear kernel.
+
+Q27. What is a kernel?
+
+A kernel helps SVM handle different types of relationships between data points.
+
+Q28. Name some SVM kernels.
+- Linear
+- Polynomial
+- RBF
+- Sigmoid
+5. Model Training and Evaluation
+Q29. Why did you use train-test split?
+
+To train the model on one part of the data and test it on unseen data.
+
+Q30. What is your train-test ratio?
+
+80% training and 20% testing.
+
+Q31. What is random_state=42?
+
+It ensures the same random split when we run the code again.
+
+Q32. What is fit()?
+
+It trains the machine learning model.
+
+Q33. What is predict()?
+
+It predicts the class of new data.
+
+Q34. What is accuracy?
+
+Accuracy measures the percentage of correctly classified predictions.
+
+Q35. What is a confusion matrix?
+
+It is a table that shows correct and incorrect predictions.
+
+Q36. What are TP, TN, FP and FN?
+- TP: Correctly predicted spam.
+- TN: Correctly predicted not spam.
+- FP: Not spam predicted as spam.
+- FN: Spam predicted as not spam.
+Q37. What is precision?
+
+Out of all emails predicted as spam, how many were actually spam?
+
+Q38. What is recall?
+
+Out of all actual spam emails, how many were correctly identified?
+
+Q39. What is F1-score?
+
+It is the harmonic mean of precision and recall.
+6. Results Based on Your Assignment
+Q40. What is the accuracy of KNN?
+
+86.28%.
+
+Q41. What is the accuracy of SVM?
+
+95.94%.
+
+Q42. Which algorithm performed better?
+
+SVM performed better because it achieved higher accuracy.
+
+Q43. Why did you compare KNN and SVM?
+
+To identify which algorithm performs better for email spam classification.
+
+Q44. What is the main application of this assignment?
+
+Email spam detection.
+
+Most Important 10 Questions
+If you have very little time, prepare these first:
+1. What is classification?
+2. What is KNN?
+3. What is SVM?
+4. What is the difference between KNN and SVM?
+5. What is K in KNN?
+6. What is a hyperplane?
+7. What is a kernel?
+8. What is a confusion matrix?
+9. What is precision and recall?
+10. Which model performed better and why?
+Remember your results:
+Model	Accuracy
+KNN	86.28%
+SVM	95.94%
+
+SVM is the better-performing model in your assignment
